@@ -124,6 +124,7 @@ REST_FRAMEWORK = {
 # CORS — allow the React dev server on port 3000
 # ─────────────────────────────────────────────────────────────────────────────
 CORS_ALLOWED_ORIGINS = [
+    'https://renewable-dashboard-eosin.vercel.app',
     'http://localhost:3000',
     'http://127.0.0.1:3000',
 ]
@@ -146,5 +147,6 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
+
 
 
