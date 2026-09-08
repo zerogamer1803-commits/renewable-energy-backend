@@ -8,11 +8,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ─────────────────────────────────────────────────────────────────────────────
 # Security
 # ─────────────────────────────────────────────────────────────────────────────
-SECRET_KEY = 'django-insecure-renewable-energy-dev-key-replace-before-production'
+import os
 
-DEBUG = True
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-renewable-energy-dev-key-replace-before-production')
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Applications
@@ -144,3 +146,4 @@ CORS_ALLOW_HEADERS = [
     'x-csrftoken',
     'x-requested-with',
 ]
+
